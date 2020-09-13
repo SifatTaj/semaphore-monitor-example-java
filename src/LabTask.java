@@ -24,7 +24,7 @@ class SharedMemory {
 
   private List<String> registers = new ArrayList<>();
 
-  public String readFromReg() {
+  public String readFromReg() throws InterruptedException {
     /**
      * TODO:
      * 1. Use monitor for this method [public synchronized String readFromReg()].
