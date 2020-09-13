@@ -20,6 +20,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 class SharedMemory {
+
   public int pointer = -1;
 
   private List<String> registers = new ArrayList<>();
