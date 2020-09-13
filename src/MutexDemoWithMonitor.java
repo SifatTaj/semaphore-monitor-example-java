@@ -1,20 +1,21 @@
-class Producer extends Thread {
+class Producer2 extends Thread {
   @Override
   public void run() {
     for (int i = 0 ; i < 100 ; i++)
-      Buffer2.criticalSection("increment");
+      BufferWithMonitor.criticalSection("increment");
   }
 }
 
-class Consumer extends Thread {
+class Consumer2 extends Thread {
   @Override
   public void run() {
     for (int i = 0 ; i < 100 ; i++)
-      Buffer2.criticalSection("decrement");
+      BufferWithMonitor.criticalSection("decrement");
   }
 }
 
-class Buffer2 {
+class BufferWithMonitor {
+
   static int count = 0;
 
   public static synchronized void criticalSection(String operation) {
@@ -28,15 +29,15 @@ class Buffer2 {
 public class MutexDemoWithMonitor {
 
   public static void main(String[] args) throws InterruptedException {
-    Producer2 producer2 = new Producer2();
-    Consumer2 consumer2 = new Consumer2();
+    Producer2 producer = new Producer2();
+    Consumer2 consumer = new Consumer2();
 
-    producer2.start();
-    consumer2.start();
+    producer.start();
+    consumer.start();
 
-    producer2.join();
-    consumer2.join();
+    producer.join();
+    consumer.join();
 
-    System.out.println("Buffer count: " + Buffer2.count);
+    System.out.println("Buffer count: " + BufferWithMonitor.count);
   }
 }

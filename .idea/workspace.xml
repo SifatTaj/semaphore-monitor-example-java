@@ -29,7 +29,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MutexDemoWithMonitor">
+  <component name="RunManager" selected="Application.MutexDemo">
     <configuration name="MutexDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MutexDemo" />
       <module name="MutexDemo" />
@@ -46,8 +46,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.MutexDemoWithMonitor" />
         <item itemvalue="Application.MutexDemo" />
+        <item itemvalue="Application.MutexDemoWithMonitor" />
       </list>
     </recent_temporary>
   </component>

@@ -1,22 +1,36 @@
 import java.util.concurrent.Semaphore;
 
-class Producer2 extends Thread {
+class Producer extends Thread {
   @Override
   public void run() {
-    for (int i = 0 ; i < 100 ; i++)
-      BufferWithMonitor.criticalSection("increment");
+    for (int i = 0 ; i < 100 ; i++) {
+      try {
+        MutexDemo.mutex.acquire();
+        Buffer.criticalSection("increment");
+        MutexDemo.mutex.release();
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
   }
 }
 
-class Consumer2 extends Thread {
+class Consumer extends Thread {
   @Override
   public void run() {
-    for (int i = 0 ; i < 100 ; i++)
-      BufferWithMonitor.criticalSection("decrement");
+    for (int i = 0 ; i < 100 ; i++) {
+      try {
+        MutexDemo.mutex.acquire();
+        Buffer.criticalSection("decrement");
+        MutexDemo.mutex.release();
+      } catch (InterruptedException e) {
+        e.printStackTrace();
+      }
+    }
   }
 }
 
-class BufferWithMonitor {
+class Buffer {
 
   static int count = 0;
 
@@ -30,9 +44,11 @@ class BufferWithMonitor {
 
 public class MutexDemo {
 
+  public static Semaphore mutex = new Semaphore(1);
+
   public static void main(String[] args) throws InterruptedException {
-    Producer2 producer = new Producer2();
-    Consumer2 consumer = new Consumer2();
+    Producer producer = new Producer();
+    Consumer consumer = new Consumer();
 
     producer.start();
     consumer.start();
@@ -40,6 +56,6 @@ public class MutexDemo {
     producer.join();
     consumer.join();
 
-    System.out.println("Buffer count: " + Buffer2.count);
+    System.out.println("Buffer count: " + Buffer.count);
   }
 }
