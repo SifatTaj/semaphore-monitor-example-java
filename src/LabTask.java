@@ -1,16 +1,16 @@
 /**
  *
  * The task is similar to the producer-consumer problem discussed in the video.
- * There is a SharedMemory class used by two threads. The WriterThread writes
+ * There is a SharedMemory class which is used by two threads. The WriterThread writes
  * some string to the shared memory at a random interval. The ReaderThread reads
- * the memory and prints those strings.
+ * the memory whenever there is a new value and prints those strings.
  *
  * If the memory is empty, the ReaderThread
  * goes to the suspended state. Whenever a new item is inserted, the WriterThread
- * give the suspended ReaderThread a wakeup call.
+ * gives the suspended ReaderThread a wakeup call.
  *
  * You only need to modify the SharedMemory class.
- * Best of luck
+ * Best of luck.
  *
  * @author Sifat Ut Taki
  * BRAC University
