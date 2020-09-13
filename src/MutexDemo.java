@@ -14,9 +14,9 @@ class Producer extends Thread {
   public void run() {
     for (int i = 0 ; i < 100 ; i++) {
       try {
-        MutexDemo.mutex.acquire();
+        MutexDemo.mutex.acquire(); // down(mutex)
         Buffer.criticalSection("increment");
-        MutexDemo.mutex.release();
+        MutexDemo.mutex.release(); // up(mutex)
       } catch (InterruptedException e) {
         e.printStackTrace();
       }
