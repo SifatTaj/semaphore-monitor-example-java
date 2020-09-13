@@ -1,23 +1,20 @@
-import java.util.concurrent.Semaphore;
-
-class Producer2 extends Thread {
+class Producer extends Thread {
   @Override
   public void run() {
     for (int i = 0 ; i < 100 ; i++)
-      BufferWithMonitor.criticalSection("increment");
+      Buffer2.criticalSection("increment");
   }
 }
 
-class Consumer2 extends Thread {
+class Consumer extends Thread {
   @Override
   public void run() {
     for (int i = 0 ; i < 100 ; i++)
-      BufferWithMonitor.criticalSection("decrement");
+      Buffer2.criticalSection("decrement");
   }
 }
 
-class BufferWithMonitor {
-
+class Buffer2 {
   static int count = 0;
 
   public static synchronized void criticalSection(String operation) {
@@ -28,17 +25,17 @@ class BufferWithMonitor {
   }
 }
 
-public class MutexDemo {
+public class MutexDemoWithMonitor {
 
   public static void main(String[] args) throws InterruptedException {
-    Producer2 producer = new Producer2();
-    Consumer2 consumer = new Consumer2();
+    Producer2 producer2 = new Producer2();
+    Consumer2 consumer2 = new Consumer2();
 
-    producer.start();
-    consumer.start();
+    producer2.start();
+    consumer2.start();
 
-    producer.join();
-    consumer.join();
+    producer2.join();
+    consumer2.join();
 
     System.out.println("Buffer count: " + Buffer2.count);
   }

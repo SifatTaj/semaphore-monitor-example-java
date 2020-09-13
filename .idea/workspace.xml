@@ -16,6 +16,7 @@
     </option>
   </component>
   <component name="ProjectId" id="1ZQkjRnx4HPDtZIx8BnIQKrQ56Y" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="RunDashboard">
     <option name="ruleStates">
       <list>
@@ -28,7 +29,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.MutexDemoWithMonitor">
     <configuration name="MutexDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MutexDemo" />
       <module name="MutexDemo" />
@@ -36,8 +37,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MutexDemoWithMonitor" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="MutexDemoWithMonitor" />
+      <module name="MutexDemo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.MutexDemoWithMonitor" />
         <item itemvalue="Application.MutexDemo" />
       </list>
     </recent_temporary>
@@ -54,5 +63,16 @@
       <updated>1584778839232</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
