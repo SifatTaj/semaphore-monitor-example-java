@@ -1,5 +1,14 @@
 import java.util.concurrent.Semaphore;
 
+/**
+ *
+ * The producer–consumer problem with a semaphore
+ * However, this is not a preferred approach
+ *
+ * @author Sifat Ut Taki
+ * BRAC University
+ */
+
 class Producer extends Thread {
   @Override
   public void run() {

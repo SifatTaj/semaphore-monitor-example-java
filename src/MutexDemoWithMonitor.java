@@ -1,3 +1,12 @@
+/**
+ *
+ * The producer–consumer problem with a monitor
+ * This is the preferred approach
+ *
+ * @author Sifat Ut Taki
+ * BRAC University
+ */
+
 class Producer2 extends Thread {
   @Override
   public void run() {
