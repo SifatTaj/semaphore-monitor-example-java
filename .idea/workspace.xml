@@ -38,7 +38,14 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.MutexDemo">
+  <component name="RunManager" selected="Application.LabTask">
+    <configuration name="LabTask" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="LabTask" />
+      <module name="MutexDemo" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MutexDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="MutexDemo" />
       <module name="MutexDemo" />
@@ -55,6 +62,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.LabTask" />
         <item itemvalue="Application.MutexDemo" />
         <item itemvalue="Application.MutexDemoWithMonitor" />
       </list>

@@ -25,27 +25,20 @@ class SharedMemory {
 
   private List<String> registers = new ArrayList<>();
 
-  public String readFromReg() throws InterruptedException {
-    /**
-     * TODO:
-     * 1. Use monitor for this method [public synchronized String readFromReg()].
-     * 2. If the pointer is at -1, it means there is no item in the list. So, suspend the readerThread [using wait()].
-     * 3. Take the value from the the list.
-     * 4. Decrease the pointer by 1.
-     * 5. Remove the string from the list,
-     * 6. Return the value
-     */
-    return "";
+  public synchronized String readFromReg() throws InterruptedException {
+
+    if (pointer == -1)
+      wait();
+
+    return registers.remove(pointer--);
   }
 
-  public void writeToReg(String value) {
-    /**
-     * TODO:
-     * 1. Use monitor for this method [public synchronized String writeToReg()].
-     * 2. Add the string to the list.
-     * 3. Increase the pointer by 1.
-     * 4. If the pointer is at 0, it indicates first item in the list. So, wakeup readerThread [using notifyAll()].
-     */
+  public synchronized void writeToReg(String value) {
+
+    registers.add(value);
+
+    if (++pointer == 0)
+      notifyAll();
   }
 }
 
